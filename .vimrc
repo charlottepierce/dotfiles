@@ -1,15 +1,32 @@
+set nocompatible
 syntax on
 set t_Co=256
 colorscheme wombat256 
 set guifont=Consolas:h11:cANSI
 set number
+set ruler " always show line/column number of cursor
+
 " Use hard tabs
 set tabstop=4
 set shiftwidth=4
 
+" Status line
+set showmode
+set laststatus=1 " Foce status line always when there are more than one windows
+
+" Search rules
+set ignorecase
+set smartcase " if pattern starts with uppercase letter, search is case sensitive
+set hlsearch " highlight search as typed
+set incsearch " incremental search - highlight as you type
+nnoremap <esc> :noh<return><esc> " pressing escape after search will clear highlights
+
 " Indenting rules
 set ai " auto-indent
 set si " smart-indent
+
+" Files to ignore
+set wildignore=*.class,*.pyc
 
 " Moving up/down will move by visual line in cases of line wrap.
 nnoremap j gj
@@ -23,19 +40,30 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
-" Make sure a block cursor is displayed in normal model, and a line in insert modes.
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
-
-" Commenting
+" Comment definitions for each file type
 autocmd FileType c,cpp,java let b:comment_leader = '// '
 autocmd FileType sh,,python   let b:comment_leader = '# '
 autocmd FileType tex              let b:comment_leader = '% '
 autocmd FileType vim              let b:comment_leader = '" '
-noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>'"'"
+" Mass commenting
+let mapleader=","
+map <leader>c :s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/g<CR>
+map <leader>C :s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//g<CR>
+
+" Disable navigation with arrow keys
+nnoremap <down> <nop>
+nnoremap <up> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+" Disable manual lookup shortcut
+nnoremap K <nop>
+vnoremap K <nop>"
+
+" No backup or swap files
+set nobackup
+set noswapfile
+set nowritebackup
 
 " Make sure backspace and delete work over line breaks and automatically-inserted indentation
 set backspace=indent,eol,start
