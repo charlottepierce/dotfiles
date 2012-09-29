@@ -1,7 +1,7 @@
 set nocompatible
 syntax on
 set t_Co=256
-colorscheme wombat256 
+colorscheme wombat256
 set guifont=Consolas:h11:cANSI
 set number
 set ruler " always show line/column number of cursor
@@ -19,7 +19,8 @@ set ignorecase
 set smartcase " if pattern starts with uppercase letter, search is case sensitive
 set hlsearch " highlight search as typed
 set incsearch " incremental search - highlight as you type
-nnoremap <esc> :noh<return><esc> " pressing escape after search will clear highlights
+" Press enter again after search to remove highlights
+nnoremap <CR> :noh<CR><CR>
 
 " Indenting rules
 set ai " auto-indent
@@ -67,3 +68,15 @@ set nowritebackup
 
 " Make sure backspace and delete work over line breaks and automatically-inserted indentation
 set backspace=indent,eol,start
+
+" Highlight trailing whitespace
+match Todo /\s\+$/
+
+" Remove trailing whitespace on save - don't alter cursor position
+fun! <SID>StripTrailingWhitespaces()
+	let l = line(".")
+	let c = col(".")
+	%s/\s\+$//e
+	call cursor(l, c)
+endfun
+autocmd FileType c,cpp,java,vim,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
