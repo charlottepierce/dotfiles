@@ -5,6 +5,7 @@ colorscheme wombat256
 set guifont=Consolas:h11:cANSI
 set number
 set ruler " always show line/column number of cursor
+set cursorline " always show the currently selected line
 
 " Use hard tabs
 set tabstop=4
