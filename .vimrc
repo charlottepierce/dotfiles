@@ -44,9 +44,9 @@ inoremap <Up> <C-o>gk
 
 " Comment definitions for each file type
 autocmd FileType c,cpp,java let b:comment_leader = '// '
-autocmd FileType sh,,python   let b:comment_leader = '# '
-autocmd FileType tex              let b:comment_leader = '% '
-autocmd FileType vim              let b:comment_leader = '" '
+autocmd FileType sh,,python let b:comment_leader = '# '
+autocmd FileType tex let b:comment_leader = '% '
+autocmd FileType vim let b:comment_leader = '" '
 " Mass commenting
 let mapleader=","
 map <leader>c :s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/g<CR>
