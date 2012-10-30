@@ -80,4 +80,4 @@ fun! <SID>StripTrailingWhitespaces()
 	%s/\s\+$//e
 	call cursor(l, c)
 endfun
-autocmd FileType c,cpp,java,vim,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,vim,python,css,html autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
