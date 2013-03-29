@@ -47,7 +47,7 @@ autocmd FileType c,cpp,java let b:comment_leader = '// '
 autocmd FileType sh,python let b:comment_leader = '# '
 autocmd FileType tex let b:comment_leader = '% '
 autocmd FileType vim let b:comment_leader = '" '
-" Mass commenting
+" Mass commenting - comma-c to comment, comma-C to uncomment
 let mapleader=","
 map <leader>c :s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/g<CR>
 map <leader>C :s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//g<CR>
@@ -81,3 +81,7 @@ fun! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfun
 autocmd FileType c,cpp,java,vim,python,css,html autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" Highlight .ly (lilypond) files as .tex (LaTeX)
+au BufNewFile,BufRead *.ly set filetype=tex
+
