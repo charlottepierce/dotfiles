@@ -80,8 +80,11 @@ fun! <SID>StripTrailingWhitespaces()
 	%s/\s\+$//e
 	call cursor(l, c)
 endfun
-autocmd FileType c,cpp,java,vim,python,css,html autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,vim,python,css,html,tex autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Highlight .ly (lilypond) files as .tex (LaTeX)
 au BufNewFile,BufRead *.ly set filetype=tex
+
+" Highlight .md files as .markdown
+au BufNewFile,BufRead *.md set filetype=markdown
 
