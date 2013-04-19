@@ -42,6 +42,12 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
+" Move split with ctrl+<direction> rather than ctrl+w -> <direction>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Comment definitions for each file type
 autocmd FileType c,cpp,java let b:comment_leader = '// '
 autocmd FileType sh,python let b:comment_leader = '# '
