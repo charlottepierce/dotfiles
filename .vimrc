@@ -30,7 +30,6 @@ set si " smart-indent
 " Syntax folding
 set foldmethod=indent
 set foldlevel=1
-set foldclose=all
 
 " Files to ignore
 set wildignore=*.class,*.pyc
