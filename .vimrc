@@ -62,11 +62,6 @@ let mapleader=","
 map <leader>c :s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/g<CR>
 map <leader>C :s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//g<CR>
 
-" Local replace
-nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left>
-" Global replace
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
-
 " Disable navigation with arrow keys
 nnoremap <down> <nop>
 nnoremap <up> <nop>
