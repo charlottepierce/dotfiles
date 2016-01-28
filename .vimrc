@@ -8,9 +8,19 @@ call vundle#begin()"
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'Valloric/YouCompleteMe'
 " End plugin loading
 call vundle#end()
 filetype plugin indent on
+
+" Configure ultisnips and YCM focus and completion shortcuts
+" ctrl+n/p or up/down arrow keys to select completion
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+" Tab to expand completion/snippet - tab/shift+tab to move between completion variables
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " General settings
 syntax on
