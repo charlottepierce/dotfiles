@@ -9,18 +9,27 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'tpope/vim-commentary'
+Plugin 'lervag/vimtex'
 " End plugin loading
 call vundle#end()
 filetype plugin indent on
 
 " Configure ultisnips and YCM focus and completion shortcuts
-" ctrl+n/p or up/down arrow keys to select completion
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+" up/down arrow keys to select completion
+let g:ycm_key_list_select_completion=['<Down>']
+let g:ycm_key_list_previous_completion=['<Up>']
 " Tab to expand completion/snippet - tab/shift+tab to move between completion variables
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+" ctrl+p to activate CtrlP plugin
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " General settings
 syntax on
