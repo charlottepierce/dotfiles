@@ -14,6 +14,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-commentary'
 Plugin 'lervag/vimtex'
+Plugin 'tpope/vim-fugitive'
 " End plugin loading
 call vundle#end()
 filetype plugin indent on
@@ -31,6 +32,15 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" airline settings
+" remove separators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_c="%f" " set section to filename
+" let g:airline_section_x = '%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#' " set section to file path
+let g:airline_section_x=""
+let g:airline_section_y="%Y" " set section to file type
+
 " General settings
 syntax on
 set t_Co=256
@@ -39,6 +49,8 @@ set guifont=Consolas:h11:cANSI
 set number
 set ruler " always show line/column number of cursor
 set cursorline " always show the currently selected line
+set mouse=a " can click to move the cursor
+set showmatch " highlight matching brackets
 
 " No backup or swap files
 set nobackup
@@ -51,7 +63,7 @@ set shiftwidth=4
 
 " Status line
 set showmode
-set laststatus=1 " Foce status line always when there are more than one windows
+set laststatus=2 " Foce status line always when there are more than one windows
 
 " Search rules
 set ignorecase
