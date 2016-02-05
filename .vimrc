@@ -15,6 +15,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-commentary'
 Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline-themes'
 " End plugin loading
 call vundle#end()
 filetype plugin indent on
@@ -33,10 +34,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " airline settings
+let g:airline_theme='wombat'
 " remove separators
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_section_c="%f" " set section to filename
 " let g:airline_section_x = '%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#' " set section to file path
 let g:airline_section_x=""
 let g:airline_section_y="%Y" " set section to file type
