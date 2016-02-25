@@ -105,3 +105,5 @@ vnoremap K <nop>"
 au BufNewFile,BufRead *.ly set filetype=tex " Highlight .ly (lilypond) files as .tex (LaTeX)
 au BufNewFile,BufRead *.md set filetype=markdown " Highlight .md files as .markdown
 
+" Spell checking for markdown and tex files
+autocmd BufRead,BufNewFile *.md,*.markdown,*.tex setlocal spell
