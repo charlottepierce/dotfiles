@@ -107,3 +107,5 @@ au BufNewFile,BufRead *.md set filetype=markdown " Highlight .md files as .markd
 
 " Spell checking for markdown and tex files
 autocmd BufRead,BufNewFile *.md,*.markdown,*.tex setlocal spell
+hi SpellBad ctermbg=1
+hi SpellBad cterm=underline
