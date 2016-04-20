@@ -92,7 +92,7 @@ PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
 alias python32='arch -i386 python'
-alias ls='ls -G'
+alias ls='ls --color'
 alias grep='grep --color=always'
 alias vi='vim'
 
