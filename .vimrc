@@ -58,9 +58,11 @@ set nobackup
 set noswapfile
 set nowritebackup
 
-" Use hard tabs
+" Use soft tabs
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+set expandtab
 
 " Status line
 set showmode
