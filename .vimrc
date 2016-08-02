@@ -1,3 +1,4 @@
+set clipboard=exclude:.*
 set nocompatible
 filetype off
 
