@@ -104,6 +104,12 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap K <nop>
 vnoremap K <nop>"
 
+" Fix inserting of A/B/C/D when using arrow keys in insert mode
+imap OA <ESC>ki
+imap OB <ESC>ji
+imap OC <ESC>li
+imap OD <ESC>hi
+
 " File highlighting
 au BufNewFile,BufRead *.ly set filetype=tex " Highlight .ly (lilypond) files as .tex (LaTeX)
 au BufNewFile,BufRead *.md set filetype=markdown " Highlight .md files as .markdown
