@@ -17,6 +17,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
 " End plugin loading
 call vundle#end()
 filetype plugin indent on
