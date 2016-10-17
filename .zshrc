@@ -82,7 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias python='python3'
 
 # make sure homebrew installed applications get precedence
 export PATH=/usr/local/bin:$PATH
@@ -92,9 +91,9 @@ export PATH=/usr/local/bin:$PATH
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
+alias python='python3'
 alias python32='arch -i386 python'
 alias ls='ls -G'
-alias ls='ls --color'
 alias grep='grep --color=always'
 alias vi='vim'
 
