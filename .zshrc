@@ -106,3 +106,25 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
+
+function playmidi {
+    SOUNDFONT='/usr/local/share/fluidsynth/generaluser.v.1.44.sf2'
+
+    if [ -e "$SOUNDFONT" ]
+    then
+
+        for i in "$@"
+        do
+            if [ -e "$i" ]
+            then
+                (fluidsynth -i "$SOUNDFONT" "$i"  2>&1) >/dev/null
+            else
+                echo "[playmidi]: cannot find file at $i"
+                return 1
+            fi
+        done
+    else
+            echo "[playmidi]: SOUNDFONT file not found at $SOUNDFONT"
+            return 1
+    fi
+}
