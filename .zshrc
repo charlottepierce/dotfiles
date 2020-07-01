@@ -128,3 +128,5 @@ function playmidi {
             return 1
     fi
 }
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/Users/cpierce/.splashkit:$PATH"
