@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -100,6 +107,7 @@ alias vi='vim'
 # antigen setup
 source ~/dev/dotfiles/antigen/antigen.zsh
 
+antigen theme romkatv/powerlevel10k
 antigen bundle hlissner/zsh-autopair
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle chrissicool/zsh-256color
@@ -130,3 +138,9 @@ function playmidi {
 }
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/Users/cpierce/.splashkit:$PATH"
+export PATH="/Users/cpierce/.splashkit:$PATH"
+export PATH="/Users/cpierce/.splashkit:$PATH"
+export PATH="/Users/cpierce/.splashkit:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
